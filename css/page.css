@@ -1,0 +1,1282 @@
+* { font-family: 'Spoqa Han Sans';}
+@media screen and (max-width:767px) and (orientation:portrait){
+    .wrapper .pageContainer{
+        width: 100%;
+        counter-reset: page;
+    }
+    .wrapper .pageContainer section{
+        width: 100%; display: block; list-style: none;
+    }
+    .wrapper .pageContainer section::before{
+        counter-increment: page;                
+        content: "0" counter(page);
+        z-index: 1000; opacity: 0;
+        margin: 0; padding: 0;
+        display: inline-block; width: 10%; 
+        position: absolute; top: 30%; left: 45%;
+        font-size: 5vw; font-weight: 700; font-style: italic; 
+        line-height: 2vh; color: #fff; text-align: right;
+    }
+    .wrapper .pageContainer .page1::before,
+    .wrapper .pageContainer .page6::before{display: none;}
+    .wrapper .pageContainer section:nth-child(odd)::before{top: 60%; left: 45%;}
+    .wrapper .pageContainer section:nth-child(odd).active::before{
+        opacity: 1;
+        transition-delay: 1.2s;
+        transition-duration: 1.5s;
+        animation-name: left_4;
+        animation-duration: 1.5s;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+    }
+    .wrapper .pageContainer section:nth-child(even).active::before{
+        opacity: 1;
+        transition-delay: 1.2s;
+        transition-duration: 1.5s;
+        animation-name: left_3;
+        animation-duration: 1.5s;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+    }
+
+    .wrapper .pageContainer section article{
+        display: block; width: 40%; opacity: 0; z-index: 1000;
+        position: absolute; left: 40%;
+        text-align: right; font-style: italic;
+    }
+    .wrapper .pageContainer section:nth-child(odd) article{top:40%;}
+    .wrapper .pageContainer section:nth-child(even) article{bottom:40%;}
+
+    .wrapper .pageContainer section.active article{
+        opacity: 1;
+        animation-duration: 1.5s;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+    }
+    .wrapper .pageContainer section:nth-child(odd).active article{animation-name: left;}
+    .wrapper .pageContainer section:nth-child(even).active article{animation-name: left_2;}
+
+    .wrapper .pageContainer section article h2{
+        opacity: 0;
+        color: #3a6eff; font-size: 2.2vw; font-weight: 400;  
+        line-height: 1.5vh;
+    }
+    .wrapper .pageContainer section article p{
+        opacity: 0; padding-top: 4%;
+        color: #000; font-size: 1.6vw; font-weight: 300;
+        line-height: 1.5vh;
+    }
+    .wrapper .pageContainer section.active article h2,
+    .wrapper .pageContainer section.active article p{
+        opacity: 1;
+        transition-delay: 1.5s;
+        transition-duration: 1.5s;
+    }
+
+    .wrapper .pageContainer section .stripe{
+        position: absolute; bottom: 0%; opacity: 1; z-index: 1;
+        width: 100%; height: 50%; background-color: white;
+    }
+    .wrapper .pageContainer .page2 .stripe{
+        bottom: -50%;
+        animation-name: sprite_dtu2;
+        animation-duration: 5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer .page2.active .stripe{
+        animation-name: sprite_utd3;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-delay: 0.5s;
+    }
+    .wrapper .pageContainer .section:nth-child(odd) .stripe{
+        animation-name: sprite_utd2;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer .section:nth-child(odd).active .stripe{
+        animation-name: sprite_dtu;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-delay: 1s;
+    }
+    .wrapper .pageContainer .page4 .stripe{
+        top: 0;
+        animation-name: sprite_dtu2;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer .page4.active .stripe{
+        animation-name: sprite_utd;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-delay: 1s;
+    }
+    .wrapper .pageContainer .section .videoContainer{
+        width: 50%; z-index: 1000;
+        position: relative; left: 42%; top: 25%;
+        animation-name: phone_2;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer section.active .videoContainer{
+        animation-name: phone;
+        animation-duration: 1.8s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer section .videoContainer::before{
+        content: "";
+        display: block;
+        padding-top: 215%;
+    }
+    .wrapper .pageContainer section .videoContainer:after{
+        width: 100%; height: 100%; z-index: 100;
+        content: ''; position: absolute; top: 0; left: 0;
+        background-image: url("../images/iphone.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .wrapper .pageContainer section .videoContainer video{
+        position: absolute;
+        top: 9%;
+        left: 9%;
+        z-index: 10;
+        width: 82%;
+    }
+    @keyframes sprite_utd{
+        from{
+            transform: rotate3d(0, 0, 0, 0deg); top: 0;
+        }
+        to{
+            transform: rotate3d(0, 0, 1, 180deg); top: 50%;
+        }
+    }
+    @keyframes sprite_utd2{
+        from{
+            top: 0;
+        }
+        to{
+            top: 0;
+        }
+    }
+    @keyframes sprite_utd3{
+        from{
+            top: -50%;
+        }
+        to{
+            top: 50%;
+        }
+    }
+    @keyframes sprite_dtu{
+        from{
+            transform: rotate3d(0, 0, 0, 0deg); bottom: 0;
+        }
+        to{
+            transform: rotate3d(0, 0, 1, 180deg); bottom: 50%;
+        }
+    }
+    @keyframes sprite_dtu2{
+        from{
+            top: 50%;
+        }
+        to{
+            top: 50%;
+        }
+    }
+    @keyframes sprite_dtu3{
+        from{
+            top: 50%;
+        }
+        to{
+            top: 0%;
+        }
+
+    }
+    @keyframes left{
+        from{
+            left: 40%; top: 40%;
+        }
+        to{
+            left: 1%; top: 40%;
+        }
+    }
+    @keyframes left_2{
+        from{
+            left: 40%; bottom: 40%;
+        }
+        to{
+            left: 1%; bottom: 40%;
+        }
+    }
+    @keyframes left_3{
+        from{
+            left: 45%; top: 40%;
+        }
+        to{
+            left: 29%; top: 40%;
+        }
+    }
+    @keyframes left_4{
+        from{
+            left: 45%; top: 55%;
+        }
+        to{
+            left: 29%; top: 55%;
+        }
+    }
+    @keyframes phone{
+        from{
+            transform: translate3d(0, 100%, 0);
+        }
+        to{
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    @keyframes phone_2{
+        from{
+            transform: translate3d(0, 0, 0);
+        }
+        to{
+            transform: translate3d(0, 100%, 0);
+        }
+    }
+}
+/*mobile (portrait)*/
+@media screen and (max-width:767px) and (orientation:landscape){
+    .wrapper .pageContainer{
+        width: 100%;
+        counter-reset: page;
+    }
+    .wrapper .pageContainer section{
+        width: 100%; display: block; list-style: none;
+    }
+    .wrapper .pageContainer section::before{
+        counter-increment: page;                
+        content: "0" counter(page);
+        z-index: 1000; opacity: 0;
+        margin: 0; padding: 0;
+        display: inline-block; width: 10%; 
+        position: absolute; top: 30%; left: 45%;
+        font-size: 5vw; font-weight: 700; font-style: italic; 
+        line-height: 2vh; color: #fff; text-align: right;
+    }
+    .wrapper .pageContainer .page1::before,
+    .wrapper .pageContainer .page6::before{display: none;}
+    .wrapper .pageContainer section:nth-child(odd)::before{top: 60%; left: 45%;}
+    .wrapper .pageContainer section:nth-child(odd).active::before{
+        opacity: 1;
+        transition-delay: 1.2s;
+        transition-duration: 1.5s;
+        animation-name: left_4;
+        animation-duration: 1.5s;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+    }
+    .wrapper .pageContainer section:nth-child(even).active::before{
+        opacity: 1;
+        transition-delay: 1.2s;
+        transition-duration: 1.5s;
+        animation-name: left_3;
+        animation-duration: 1.5s;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+    }
+
+    .wrapper .pageContainer section article{
+        display: block; width: 40%; opacity: 0; z-index: 1000;
+        position: absolute; left: 40%;
+        text-align: right; font-style: italic;
+    }
+    .wrapper .pageContainer section:nth-child(odd) article{top:40%;}
+    .wrapper .pageContainer section:nth-child(even) article{bottom:40%;}
+
+    .wrapper .pageContainer section.active article{
+        opacity: 1;
+        animation-duration: 1.5s;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+    }
+    .wrapper .pageContainer section:nth-child(odd).active article{animation-name: left;}
+    .wrapper .pageContainer section:nth-child(even).active article{animation-name: left_2;}
+
+    .wrapper .pageContainer section article h2{
+        opacity: 0;
+        color: #3a6eff; font-size: 2.2vw; font-weight: 400;  
+        line-height: 2vh;
+    }
+    .wrapper .pageContainer section article p{
+        opacity: 0; padding-top: 4%;
+        color: #000; font-size: 1.6vw; font-weight: 300;
+        line-height: 4vh;
+    }
+    .wrapper .pageContainer section.active article h2,
+    .wrapper .pageContainer section.active article p{
+        opacity: 1;
+        transition-delay: 1.5s;
+        transition-duration: 1.5s;
+        transition-timing-function: ease-in-out;
+    }
+
+    .wrapper .pageContainer section .stripe{
+        position: absolute; bottom: 0%; opacity: 1; z-index: 1;
+        width: 100%; height: 50%; background-color: white;
+    }
+    .wrapper .pageContainer .page2 .stripe{
+        bottom: -50%;
+        animation-name: sprite_dtu2;
+        animation-duration: 5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer .page2.active .stripe{
+        animation-name: sprite_utd3;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-delay: 0.5s;
+    }
+    .wrapper .pageContainer .section:nth-child(odd) .stripe{
+        animation-name: sprite_utd2;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer .section:nth-child(odd).active .stripe{
+        animation-name: sprite_dtu;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-delay: 1s;
+    }
+    .wrapper .pageContainer .page4 .stripe{
+        top: 0;
+        animation-name: sprite_dtu2;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer .page4.active .stripe{
+        animation-name: sprite_utd;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-delay: 1s;
+    }
+    .wrapper .pageContainer .section .videoContainer{
+        width: 25%; z-index: 1000;
+        position: relative; left: 42%; top: 2%;
+        animation-name: phone_2;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer section.active .videoContainer{
+        animation-name: phone;
+        animation-duration: 1.8s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer section .videoContainer::before{
+        content: "";
+        display: block;
+        padding-top: 215%;
+    }
+    .wrapper .pageContainer section .videoContainer:after{
+        width: 100%; height: 100%; z-index: 100;
+        content: ''; position: absolute; top: 0; left: 0;
+        background-image: url("../images/iphone.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .wrapper .pageContainer section .videoContainer video{
+        position: absolute;
+        top: 9%;
+        left: 9%;
+        z-index: 10;
+        width: 82%;
+    }
+    @keyframes sprite_utd{
+        from{
+            transform: rotate3d(0, 0, 0, 0deg); top: 0;
+        }
+        to{
+            transform: rotate3d(0, 0, 1, 180deg); top: 50%;
+        }
+    }
+    @keyframes sprite_utd2{
+        from{
+            top: 0;
+        }
+        to{
+            top: 0;
+        }
+    }
+    @keyframes sprite_utd3{
+        from{
+            top: -50%;
+        }
+        to{
+            top: 50%;
+        }
+    }
+    @keyframes sprite_dtu{
+        from{
+            transform: rotate3d(0, 0, 0, 0deg); bottom: 0;
+        }
+        to{
+            transform: rotate3d(0, 0, 1, 180deg); bottom: 50%;
+        }
+    }
+    @keyframes sprite_dtu2{
+        from{
+            top: 50%;
+        }
+        to{
+            top: 50%;
+        }
+    }
+    @keyframes sprite_dtu3{
+        from{
+            top: 50%;
+        }
+        to{
+            top: 0%;
+        }
+
+    }
+    @keyframes left{
+        from{
+            left: 40%; top: 25%;
+        }
+        to{
+            left: -1%; top: 25%;
+        }
+    }
+    @keyframes left_2{
+        from{
+            left: 40%; bottom: 25%;
+        }
+        to{
+            left: -1%; bottom: 25%;
+        }
+    }
+    @keyframes left_3{
+        from{
+            left: 45%; top: 30%;
+        }
+        to{
+            left: 30%; top: 30%;
+        }
+    }
+    @keyframes left_4{
+        from{
+            left: 45%; top: 70%;
+        }
+        to{
+            left: 29%; top: 70%;
+        }
+    }
+    @keyframes phone{
+        from{
+            transform: translate3d(0, 100%, 0);
+        }
+        to{
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    @keyframes phone_2{
+        from{
+            transform: translate3d(0, 0, 0);
+        }
+        to{
+            transform: translate3d(0, 100%, 0);
+        }
+    }
+}
+/*mobile (landscape*/
+@media screen and (min-width:768px) and (max-width:1365px) and (orientation:portrait){
+    .wrapper .pageContainer{
+        width: 100%;
+        counter-reset: page;
+    }
+    .wrapper .pageContainer section{
+        width: 100%; display: block; list-style: none;
+    }
+    .wrapper .pageContainer section::before{
+        counter-increment: page;                
+        content: "0" counter(page);
+        z-index: 1000; opacity: 0;
+        margin: 0; padding: 0;
+        display: inline-block; width: 10%; 
+        position: absolute; top: 30%; left: 45%;
+        font-size: 5vw; font-weight: 700; font-style: italic; 
+        line-height: 2vh; color: #fff; text-align: right;
+    }
+    .wrapper .pageContainer .page1::before,
+    .wrapper .pageContainer .page6::before{display: none;}
+    .wrapper .pageContainer section:nth-child(odd)::before{top: 60%; left: 45%;}
+    .wrapper .pageContainer section:nth-child(odd).active::before{
+        opacity: 1;
+        transition-delay: 1.2s;
+        transition-duration: 1.5s;
+        animation-name: left_4;
+        animation-duration: 1.5s;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+    }
+    .wrapper .pageContainer section:nth-child(even).active::before{
+        opacity: 1;
+        transition-delay: 1.2s;
+        transition-duration: 1.5s;
+        animation-name: left_3;
+        animation-duration: 1.5s;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+    }
+
+    .wrapper .pageContainer section article{
+        display: block; width: 30%; opacity: 0; z-index: 1000;
+        position: absolute; left: 40%;
+        text-align: right; font-style: italic;
+    }
+    .wrapper .pageContainer section:nth-child(odd) article{top:40%;}
+    .wrapper .pageContainer section:nth-child(even) article{bottom:40%;}
+
+    .wrapper .pageContainer section.active article{
+        opacity: 1;
+        animation-duration: 1.5s;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+    }
+    .wrapper .pageContainer section:nth-child(odd).active article{animation-name: left;}
+    .wrapper .pageContainer section:nth-child(even).active article{animation-name: left_2;}
+
+    .wrapper .pageContainer section article h2{
+        opacity: 0;
+        color: #3a6eff; font-size: 2.2vw; font-weight: 400;  
+        line-height: 1.5vh;
+    }
+    .wrapper .pageContainer section article p{
+        opacity: 0; padding-top: 4%;
+        color: #000; font-size: 1.6vw; font-weight: 300;
+        line-height: 1.5vh;
+    }
+    .wrapper .pageContainer section.active article h2,
+    .wrapper .pageContainer section.active article p{
+        opacity: 1;
+        transition-delay: 1.5s;
+        transition-duration: 1.5s;
+    }
+
+    .wrapper .pageContainer section .stripe{
+        position: absolute; bottom: 0%; opacity: 1; z-index: 1;
+        width: 100%; height: 50%; background-color: white;
+    }
+    .wrapper .pageContainer .page2 .stripe{
+        bottom: -50%;
+        animation-name: sprite_dtu2;
+        animation-duration: 5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer .page2.active .stripe{
+        animation-name: sprite_utd3;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-delay: 0.5s;
+    }
+    .wrapper .pageContainer .section:nth-child(odd) .stripe{
+        animation-name: sprite_utd2;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer .section:nth-child(odd).active .stripe{
+        animation-name: sprite_dtu;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-delay: 1s;
+    }
+    .wrapper .pageContainer .page4 .stripe{
+        top: 0;
+        animation-name: sprite_dtu2;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer .page4.active .stripe{
+        animation-name: sprite_utd;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-delay: 1s;
+    }
+    .wrapper .pageContainer .section .videoContainer{
+        width: 26%; z-index: 1000;
+        position: relative; left: 38%; top: 28%;
+        animation-name: phone_2;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer section.active .videoContainer{
+        animation-name: phone;
+        animation-duration: 1.8s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer section .videoContainer::before{
+        content: "";
+        display: block;
+        padding-top: 215%;
+    }
+    .wrapper .pageContainer section .videoContainer:after{
+        width: 100%; height: 100%; z-index: 100;
+        content: ''; position: absolute; top: 0; left: 0;
+        background-image: url("../images/iphone.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .wrapper .pageContainer section .videoContainer video{
+        position: absolute;
+        top: 9%;
+        left: 9%;
+        z-index: 10;
+        width: 82%;
+    }
+    @keyframes sprite_utd{
+        from{
+            transform: rotate3d(0, 0, 0, 0deg); top: 0;
+        }
+        to{
+            transform: rotate3d(0, 0, 1, 180deg); top: 50%;
+        }
+    }
+    @keyframes sprite_utd2{
+        from{
+            top: 0;
+        }
+        to{
+            top: 0;
+        }
+    }
+    @keyframes sprite_utd3{
+        from{
+            top: -50%;
+        }
+        to{
+            top: 50%;
+        }
+    }
+    @keyframes sprite_dtu{
+        from{
+            transform: rotate3d(0, 0, 0, 0deg); bottom: 0;
+        }
+        to{
+            transform: rotate3d(0, 0, 1, 180deg); bottom: 50%;
+        }
+    }
+    @keyframes sprite_dtu2{
+        from{
+            top: 50%;
+        }
+        to{
+            top: 50%;
+        }
+    }
+    @keyframes sprite_dtu3{
+        from{
+            top: 50%;
+        }
+        to{
+            top: 0%;
+        }
+
+    }
+    @keyframes left{
+        from{
+            left: 40%; top: 40%;
+        }
+        to{
+            left: 6%; top: 40%;
+        }
+    }
+    @keyframes left_2{
+        from{
+            left: 40%; bottom: 40%;
+        }
+        to{
+            left: 6%; bottom: 40%;
+        }
+    }
+    @keyframes left_3{
+        from{
+            left: 45%; top: 40%;
+        }
+        to{
+            left: 25%; top: 40%;
+        }
+    }
+    @keyframes left_4{
+        from{
+            left: 45%; top: 55%;
+        }
+        to{
+            left: 25%; top: 55%;
+        }
+    }
+    @keyframes phone{
+        from{
+            transform: translate3d(0, 100%, 0);
+        }
+        to{
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    @keyframes phone_2{
+        from{
+            transform: translate3d(0, 0, 0);
+        }
+        to{
+            transform: translate3d(0, 100%, 0);
+        }
+    }
+}
+/*tablet (portrait)*/
+@media screen and (min-width:768px) and (max-width:1365px) and (orientation:landscape){
+    .wrapper .pageContainer{
+        width: 100%;
+        counter-reset: page;
+    }
+    .wrapper .pageContainer section{
+        width: 100%; display: block; list-style: none;
+    }
+    .wrapper .pageContainer section::before{
+        counter-increment: page;                
+        content: "0" counter(page);
+        z-index: 1000; opacity: 0;
+        margin: 0; padding: 0;
+        display: inline-block; width: 10%; 
+        position: absolute; top: 30%; left: 45%;
+        font-size: 6vw; font-weight: 700; font-style: italic; 
+        line-height: 5vh; color: #fff; text-align: right;
+    }
+    .wrapper .pageContainer .page1::before,
+    .wrapper .pageContainer .page6::before{display: none;}
+    .wrapper .pageContainer section:nth-child(odd)::before{top: 60%; left: 45%;}
+    .wrapper .pageContainer section:nth-child(odd).active::before{
+        opacity: 1;
+        transition-delay: 1.2s;
+        transition-duration: 1.5s;
+        animation-name: left_4;
+        animation-duration: 1.5s;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+    }
+    .wrapper .pageContainer section:nth-child(even).active::before{
+        opacity: 1;
+        transition-delay: 1.2s;
+        transition-duration: 1.5s;
+        animation-name: left_3;
+        animation-duration: 1.5s;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+    }
+
+    .wrapper .pageContainer section article{
+        display: block; width: 30%; opacity: 0; z-index: 1000;
+        position: absolute; left: 40%;
+        text-align: right; font-style: italic;
+    }
+    .wrapper .pageContainer section:nth-child(odd) article{top:40%;}
+    .wrapper .pageContainer section:nth-child(even) article{bottom:40%;}
+
+    .wrapper .pageContainer section.active article{
+        opacity: 1;
+        animation-duration: 1.5s;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+    }
+    .wrapper .pageContainer section:nth-child(odd).active article{animation-name: left;}
+    .wrapper .pageContainer section:nth-child(even).active article{animation-name: left_2;}
+
+    .wrapper .pageContainer section article h2{
+        opacity: 0;
+        color: #3a6eff; font-size: 3vw; font-weight: 400;  
+        line-height: 4vh;
+    }
+    .wrapper .pageContainer section article p{
+        opacity: 0; padding-top: 4%;
+        color: #000; font-size: 1.6vw; font-weight: 300;
+        line-height: 4vh;
+    }
+    .wrapper .pageContainer section.active article h2,
+    .wrapper .pageContainer section.active article p{
+        opacity: 1;
+        transition-delay: 1.5s;
+        transition-duration: 1.5s;
+    }
+
+    .wrapper .pageContainer section .stripe{
+        position: absolute; bottom: 0%; opacity: 1; z-index: 1;
+        width: 100%; height: 50%; background-color: white;
+    }
+    .wrapper .pageContainer .page2 .stripe{
+        bottom: -50%;
+        animation-name: sprite_dtu2;
+        animation-duration: 5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer .page2.active .stripe{
+        animation-name: sprite_utd3;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-delay: 0.5s;
+    }
+    .wrapper .pageContainer .section:nth-child(odd) .stripe{
+        animation-name: sprite_utd2;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer .section:nth-child(odd).active .stripe{
+        animation-name: sprite_dtu;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-delay: 1s;
+    }
+    .wrapper .pageContainer .page4 .stripe{
+        top: 0;
+        animation-name: sprite_dtu2;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer .page4.active .stripe{
+        animation-name: sprite_utd;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-delay: 1s;
+    }
+    .wrapper .pageContainer .section .videoContainer{
+        width: 18%; z-index: 1000;
+        position: relative; left: 42%; top: 27%;
+        animation-name: phone_2;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer section.active .videoContainer{
+        animation-name: phone;
+        animation-duration: 1.8s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer section .videoContainer::before{
+        content: "";
+        display: block;
+        padding-top: 215%;
+    }
+    .wrapper .pageContainer section .videoContainer:after{
+        width: 100%; height: 100%; z-index: 100;
+        content: ''; position: absolute; top: 0; left: 0;
+        background-image: url("../images/iphone.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .wrapper .pageContainer section .videoContainer video{
+        position: absolute;
+        top: 9%;
+        left: 9%;
+        z-index: 10;
+        width: 82%;
+    }
+    @keyframes sprite_utd{
+        from{
+            transform: rotate3d(0, 0, 0, 0deg); top: 0;
+        }
+        to{
+            transform: rotate3d(0, 0, 1, 180deg); top: 50%;
+        }
+    }
+    @keyframes sprite_utd2{
+        from{
+            top: 0;
+        }
+        to{
+            top: 0;
+        }
+    }
+    @keyframes sprite_utd3{
+        from{
+            top: -50%;
+        }
+        to{
+            top: 50%;
+        }
+    }
+    @keyframes sprite_dtu{
+        from{
+            transform: rotate3d(0, 0, 0, 0deg); bottom: 0;
+        }
+        to{
+            transform: rotate3d(0, 0, 1, 180deg); bottom: 50%;
+        }
+    }
+    @keyframes sprite_dtu2{
+        from{
+            top: 50%;
+        }
+        to{
+            top: 50%;
+        }
+    }
+    @keyframes sprite_dtu3{
+        from{
+            top: 50%;
+        }
+        to{
+            top: 0%;
+        }
+
+    }
+    @keyframes left{
+        from{
+            left: 40%; top: 50%;
+        }
+        to{
+            left: 8%; top: 30%;
+        }
+    }
+    @keyframes left_2{
+        from{
+            left: 40%; bottom: 30%;
+        }
+        to{
+            left: 8%; bottom: 30%;
+        }
+    }
+    @keyframes left_3{
+        from{
+            left: 45%; top: 40%;
+        }
+        to{
+            left: 28%; top: 35%;
+        }
+    }
+    @keyframes left_4{
+        from{
+            left: 45%; top: 55%;
+        }
+        to{
+            left: 27%; top: 65%;
+        }
+    }
+    @keyframes phone{
+        from{
+            transform: translate3d(0, 100%, 0);
+        }
+        to{
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    @keyframes phone_2{
+        from{
+            transform: translate3d(0, 0, 0);
+        }
+        to{
+            transform: translate3d(0, 100%, 0);
+        }
+    }
+}
+/*tablet (landscape)*/
+@media screen and (min-width:1366px){
+    .wrapper .pageContainer{
+        width: 100%;
+        counter-reset: page;
+    }
+    .wrapper .pageContainer section{
+        width: 100%; display: block; list-style: none;
+    }
+    .wrapper .pageContainer section::before{
+        counter-increment: page;                
+        content: "0" counter(page);
+        z-index: 1000; opacity: 0;
+        margin: 0; padding: 0;
+        display: inline-block; width: 10%; 
+        position: absolute; top: 30%; left: 45%;
+        font-size: 5vw; font-weight: 700; font-style: italic; 
+        line-height: 2vh; color: #fff; text-align: right;
+    }
+    .wrapper .pageContainer .page1::before,
+    .wrapper .pageContainer .page6::before{display: none;}
+    .wrapper .pageContainer section:nth-child(odd)::before{top: 60%; left: 45%;}
+    .wrapper .pageContainer section:nth-child(odd).active::before{
+        opacity: 1;
+        transition-delay: 1.2s;
+        transition-duration: 1.5s;
+        animation-name: left_4;
+        animation-duration: 1.5s;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+    }
+    .wrapper .pageContainer section:nth-child(even).active::before{
+        opacity: 1;
+        transition-delay: 1.2s;
+        transition-duration: 1.5s;
+        animation-name: left_3;
+        animation-duration: 1.5s;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+    }
+
+    .wrapper .pageContainer section article{
+        display: block; width: 30%; opacity: 0; z-index: 1000;
+        position: absolute; left: 40%;
+        text-align: right; font-style: italic;
+    }
+    .wrapper .pageContainer section:nth-child(odd) article{top:25%;}
+    .wrapper .pageContainer section:nth-child(even) article{bottom:25%;}
+
+    .wrapper .pageContainer section.active article{
+        opacity: 1;
+        animation-duration: 1.5s;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+    }
+    .wrapper .pageContainer section:nth-child(odd).active article{animation-name: left;}
+    .wrapper .pageContainer section:nth-child(even).active article{animation-name: left_2;}
+
+    .wrapper .pageContainer section article h2{
+        opacity: 0;
+        color: #3a6eff; font-size: 2.2vw; font-weight: 400;  
+        line-height: 4vh;
+    }
+    .wrapper .pageContainer section article p{
+        opacity: 0; padding-top: 4%;
+        color: #000; font-size: 1.6vw; font-weight: 300;
+        line-height: 4vh;
+    }
+    .wrapper .pageContainer section.active article h2,
+    .wrapper .pageContainer section.active article p{
+        opacity: 1;
+        transition-delay: 1.5s;
+        transition-duration: 1.5s;
+    }
+
+    .wrapper .pageContainer section .stripe{
+        position: absolute; bottom: 0%; opacity: 1; z-index: 1;
+        width: 100%; height: 50%; background-color: white;
+    }
+    .wrapper .pageContainer .page2 .stripe{
+        bottom: -50%;
+        animation-name: sprite_dtu2;
+        animation-duration: 5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer .page2.active .stripe{
+        animation-name: sprite_utd3;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-delay: 0.5s;
+    }
+    .wrapper .pageContainer .section:nth-child(odd) .stripe{
+        animation-name: sprite_utd2;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer .section:nth-child(odd).active .stripe{
+        animation-name: sprite_dtu;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-delay: 1s;
+    }
+    .wrapper .pageContainer .page4 .stripe{
+        top: 0;
+        animation-name: sprite_dtu2;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer .page4.active .stripe{
+        animation-name: sprite_utd;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-delay: 1s;
+    }
+    .wrapper .pageContainer .section .videoContainer{
+        width: 26%; z-index: 1000;
+        position: relative; left: 38%; top: 2%;
+        animation-name: phone_2;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer section.active .videoContainer{
+        animation-name: phone;
+        animation-duration: 1.8s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .wrapper .pageContainer section .videoContainer::before{
+        content: "";
+        display: block;
+        padding-top: 186.537994%;
+    }
+    .wrapper .pageContainer section .videoContainer:after{
+        width: 100%; height: 100%; z-index: 100;
+        content: ''; position: absolute; top: 0; left: 0;
+        background-image: url("../images/iphone.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .wrapper .pageContainer section .videoContainer video{
+        position: absolute;
+        top: 13%;
+        left: 14%;
+        z-index: 10;
+        width: 71%;
+    }
+    @keyframes sprite_utd{
+        from{
+            transform: rotate3d(0, 0, 0, 0deg); top: 0;
+        }
+        to{
+            transform: rotate3d(0, 0, 1, 180deg); top: 50%;
+        }
+    }
+    @keyframes sprite_utd2{
+        from{
+            top: 0;
+        }
+        to{
+            top: 0;
+        }
+    }
+    @keyframes sprite_utd3{
+        from{
+            top: -50%;
+        }
+        to{
+            top: 50%;
+        }
+    }
+    @keyframes sprite_dtu{
+        from{
+            transform: rotate3d(0, 0, 0, 0deg); bottom: 0;
+        }
+        to{
+            transform: rotate3d(0, 0, 1, 180deg); bottom: 50%;
+        }
+    }
+    @keyframes sprite_dtu2{
+        from{
+            top: 50%;
+        }
+        to{
+            top: 50%;
+        }
+    }
+    @keyframes sprite_dtu3{
+        from{
+            top: 50%;
+        }
+        to{
+            top: 0%;
+        }
+
+    }
+    @keyframes left{
+        from{
+            left: 40%; top: 25%;
+        }
+        to{
+            left: 8%; top: 25%;
+        }
+    }
+    @keyframes left_2{
+        from{
+            left: 40%; bottom: 25%;
+        }
+        to{
+            left: 8%; bottom: 25%;
+        }
+    }
+    @keyframes left_3{
+        from{
+            left: 45%; top: 30%;
+        }
+        to{
+            left: 28%; top: 30%;
+        }
+    }
+    @keyframes left_4{
+        from{
+            left: 45%; top: 60%;
+        }
+        to{
+            left: 27%; top: 60%;
+        }
+    }
+    @keyframes phone{
+        from{
+            transform: translate3d(0, 100%, 0);
+        }
+        to{
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    @keyframes phone_2{
+        from{
+            transform: translate3d(0, 0, 0);
+        }
+        to{
+            transform: translate3d(0, 100%, 0);
+        }
+    }
+}
+/*desktop*/

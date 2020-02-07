@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Heydealer</title>
+    <link rel="stylesheet" href="css/import.css">
+    <link href="css/onepage-scroll.css" rel='stylesheet' type='text/css'>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/jquery.onepage-scroll.js"></script>
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            background: #fff;
+            padding: 0;
+            text-align: center;
+            position: relative;
+            margin: 0;
+            height: 100%;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .wrapper {
+            height: 100% !important;
+            margin: 0 auto; 
+            overflow: hidden;
+        }
+    </style>
+	<script>
+        $(document).ready(function(){
+            $(".pageContainer").onepage_scroll({
+                sectionContainer: "section",     // section 대상설정.
+                easing: "ease",                  // css3 가속도설정. ease-in, ease-out, cubic....
+                animationTime: 1000,             // section간 전환속도
+                pagination: true,                // 우측 pagenation 설정.
+                updateURL: false,                // page 전환시 url 에 #1,2,3 표시.
+                beforeMove: function(index) {},  // 페이지 이동전 함수호출
+                afterMove: function(index) {},   // 페이지 이동후 함수호출
+                loop: true,                      // 페이지 전환 반복여부
+                keyboard: true,                  // 키보드 조종여부 (up : 위, down : 아래, space : 한페이지씩 이동, home : 첫페이지로, end : 마지막페이지)
+                responsiveFallback: 357,         // scroll 플러그인 해제 기준 해상도너비(width). 사용안할시 false.
+                direction: "horizontal",         // 동작방향설정 "horizontal" "vertical"
+          
+            });
+        });
+      </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="borders">
+            <div class="border hori top"></div>
+            <div class="border hori bot"></div>
+            <div class="border verti left"></div>
+            <div class="border verti right"></div>
+        </div>
+        <header>
+            <h1>HEY DEALER
+                <a>
+                    <img src="images/logo.png" alt="logo">
+                </a>
+            </h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="https://apps.apple.com/kr/app/%ED%97%A4%EC%9D%B4%EB%94%9C%EB%9F%AC-100%EB%A7%8C%EC%9B%90-%EB%82%B4%EC%B0%A8%ED%8C%94%EA%B8%B0-%EC%95%B1/id980166975" target="blank"></a>
+                    </li>
+                    <li>
+                        <a href="https://play.google.com/store/apps/details?id=kr.perfectree.heydealer&hl=ko" target="blank"></a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="scroll_Icon">
+                <a>
+                    <span></span>Scroll
+                </a>
+            </div>
+        </header>
+
+        <div class="pageContainer">
+            <section class="page1">
+            </section>
+            <section class="page2">
+                <article>
+                    <h2>새 견적요청</h2>
+                    <p>견적 비교할 차량 번호를 입력 후<br>등급 및 옵션을 선택해주세요</p>
+                </article>
+                <div class="stripe"></div>
+                <div class="videoContainer">
+                    <video autoplay loop>
+                        <source src="videos/video_01.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </section>
+            <section class="page3">
+                <article>
+                    <h2>딜러선택</h2>
+                    <p>비교견적 완료 후<br>최고 입찰가 딜러선택하기</p>
+                </article>
+                <div class="stripe"></div>
+                <div class="videoContainer">
+                    <video autoplay loop>
+                        <source src="videos/video_01.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </section>
+            <section class="page4">
+                <article>
+                    <h2>차량 인수</h2>
+                    <p>차량 인수를 위해 검차진행 후<br>서류진행을 통한 차량판매완료</p>
+                </article>
+                <div class="stripe"></div>
+                <div class="videoContainer">
+                    <video autoplay loop>
+                        <source src="videos/video_03.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </section>
+            <section class="page5">
+                <article>
+                    <h2>시세조회</h2>
+                    <p>보유 차량 정보를 통해<br>간단한 시세조회도 가능합니다</p>
+                </article>
+                <div class="stripe"></div>
+                <div class="videoContainer">
+                    <video autoplay loop>
+                        <source src="videos/video_04.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </section>
+            <section class="page6">
+            </section>
+        </div>
+    </div>
+</body>
+</html>
